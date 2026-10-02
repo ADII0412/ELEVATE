@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&family=Scoutie+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+h1, h2 {
+    font-family: "Scoutie Sans", sans-serif;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+}
+
+.landing-page {
+    height: 120vh;
+    width: 100%;
+}
+
+.landing-top{
+    height: 55%;
+    width: 100%;
+    background-color: #FD1C00;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-top nav{
+    height: 30%;
+    width: 100%;
+    display: flex;
+}
+
+.left-nav {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 15px 0 0 15px;
+}
+
+.navlink {
+    width: fit-content;
+    color: whitesmoke;
+    font-family: "Google Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    animation: fader 1s ease-out;
+}
+
+.navlink::before{
+    content: "";
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.2rem;
+    background-color: whitesmoke;
+    margin-right: 0.5rem;
+    transition: width 0.2s linear;
+}
+
+.navlink:hover::before{
+    width: 1rem;
+}
+
+.right-nav {
+    height: 100%;
+    width: 40%;
+    padding-top: 15px;
+}
+
+.right-nav p{
+    color: whitesmoke;
+    font-family: "Google Sans", sans-serif;
+    width: 20rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+    animation: fader 1s ease-out;
+}
+
+.landing-heading {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    overflow: hidden;
+}
+
+.landing-heading h1 {
+    font-size: 12rem;
+    line-height: 0.8;
+    font-weight: 300;
+    color: whitesmoke;
+    letter-spacing: -18px;
+    will-change: transform;
+    animation: textSlideUp 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.landing-bottom {
+    height: 45%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.landing-bottom img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    transition: scale 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+    animation: sizing 1s ease-out;
+}
+
+.landing-bottom img:hover {
+    scale: 1.1;
+}
+
+@keyframes sizing {
+    from{
+        scale: 1.2;
+    }
+    to{
+        scale: 1;
+    }
+}
+
+@keyframes textSlideUp {
+    from{
+        transform: translateY(140%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes fader {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* Feature Page ---------------------------------------------------------------------------------------------*/
+
+.feature-page {
+    height: 100vh;
+    width: 100%;
+    padding: 0px 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.feature-card {
+    flex: 1;
+    width: 100%;
+    border-top: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s ease-in;
+}
+
+.feature-card:nth-child(1){
+    border: none;
+}
+
+.amount {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.amount h1{
+    font-family: "Google Sans", sans-serif;
+    font-size: 10rem;
+    font-weight: 400;
+    letter-spacing: -10px;
+    transition: color 0.2s ease-in;
+}
+
+.details{
+    height: 100%;
+    width: 50%;
+    display: flex;
+}
+
+.details .description{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-family: "Google Sans", sans-serif;
+}
+
+.description p {
+    font-size: 0.9rem;
+    font-weight: 200;
+    width: 37ch;
+    transition: color 0.2s ease-in;
+}
+
+.description a{
+    text-decoration: underline;
+    color: #FD1C00;
+    outline: none;
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+.card-image-container{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.card-image-container .card-image{
+    height: 100%;
+    width: 50%;
+}
+
+.card-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: translateY(120%);
+    transition: transform 0.5s ease-out;
+}
+
+.feature-card:hover {
+    background-color: #FD1C00;
+}
+.feature-card:hover .card-quantity-marker{
+    color: whitesmoke;
+}
+
+.feature-card:hover .description a{
+    color: whitesmoke;
+}
+
+.feature-card:hover .description p {
+    color: whitesmoke;
+}
+
+.feature-card:hover .card-image img{
+    transform: translateY(0%);
+}
+
+/* Marquee Section starts---------------------------------------------------------------------------------------- */
+
+.marquee-section{
+    height: 50vh;
+    width: 100%;
+    margin-top: 35px;
+    padding: 1rem 0;
+    display: flex;
+}
+
+.marquee{
+    height: 100%;
+    width: 100%;
+    margin-top: 35px;
+    padding: 2rem 0;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.marquee-track {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-shrink: 0;
+    animation: marquee-scroll 18s infinite linear;
+}
+
+.marquee-track img{
+    height: 100%;
+    width: 20%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+
+@keyframes marquee-scroll {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+/* Footer starts here------------------------------------------------------------------------------ */
+
+footer {
+    height: 100vh;
+    width: 100%;
+    padding: 2rem 2rem 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-container {
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-card {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px 40px 0 0;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.img-container {
+    height: 80%;
+    width: 100%;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.footer-card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+    transition: scale 1s cubic-bezier(0.215, 0.610, 0.355, 1), filter 1s cubic-bezier(0.215, 0.610, 0.355, 1);
+    filter: saturate(0);
+}
+
+.footer-card img:hover {
+    scale: 1.1;
+    filter: saturate(1);
+}
+
+.footer-card p {
+    font-family: "Google Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #FD1C00;
+}
+
+/* copywright section starts----------------------------------------------------------------- */
+
+.end {
+    border-top: 1px solid black;
+    height: 100px;
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.5s ease-in;
+}
+
+.end h1 {
+    font-family: "Google Sans", sans-serif;
+    font-weight: 100;
+    font-size: 4rem;
+    line-height: 0;
+    letter-spacing: 100px;
+    cursor: pointer;
+    color: #FD1C00;
+    transition: color 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.end:hover {
+    background-color: #FD1C00;
+}
+
+.end:hover h1{
+    color: whitesmoke;
+}
